@@ -30,6 +30,7 @@ I then ordered by estimated CLV in descending order.
 
 Challenge 1 Handling NULL Values:
 In several queries, I encountered NULL values that needed special handling. For example, when calculating total deposits, a simple SUM would return NULL if any value was NULL. I addressed this using COALESCE and IFNULL functions to substitute zeros for NULL values, ensuring accurate totals without excluding customers with partial data.
+
 Challenge 2 Determining the Latest Transaction Date:
 One of the hard aspects was finding out the most recent transaction date when transactions could come from either savings or withdrawals tables. I needed to account for customers who might have activity in one table but not the other.
 I solved this with a carefully constructed CASE statement that:
@@ -38,5 +39,6 @@ Handled when only withdrawal transactions exist
 Compared dates when both exist
 Handled when neither exists
 This ensured accurate inactivity calculations even with incomplete transaction histories.
+
 Challenge 3 Working with Different Currency Units:
 The data stored monetary values in kobo, but reporting in naira made more sense. I consistently applied division by 100 across all calculations to present figures.

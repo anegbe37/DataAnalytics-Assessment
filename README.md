@@ -34,10 +34,10 @@ In several queries, I encountered NULL values that needed special handling. For 
 Challenge 2 Determining the Latest Transaction Date:
 One of the hard aspects was finding out the most recent transaction date when transactions could come from either savings or withdrawals tables. I needed to account for customers who might have activity in one table but not the other.
 I solved this with a carefully constructed CASE statement that:
-Handled when only savings transactions exist
-Handled when only withdrawal transactions exist
-Compared dates when both exist
-Handled when neither exists
+Handled when only savings transactions exist,
+Handled when only withdrawal transactions exist,
+Compared dates when both exist,
+Handled when neither exists,
 This ensured accurate inactivity calculations even with incomplete transaction histories.
 
 Challenge 3 Working with Different Currency Units:
